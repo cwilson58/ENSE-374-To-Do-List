@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
     font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.tasks{
+    background-color: #ecf4ff;
+}
+.btn-border{
+    border: 1px black;
 }

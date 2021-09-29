@@ -14,43 +14,47 @@
     <h1>To Do!</h1>
     
   </header> 
-  <div class = "accordion">
+  <div class = "accordion" id="accordionTop">
     <div class="accordion-item">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         Logged in as USER
       </button>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionTop">
+        <div class="accordion-body">
+          <a href="../index.html" class="btn btn-primary">Log Out</a>
+        </div>
+      </div>
     </div>
   </div>
   <br>
   <br>
-  <a href="../index.html">
-    <button>Log Out!</button>
-  </a>
-  <form action="">
-    <input type="text" name ="finishedtaskTxt" id ="finishedtaskTxt" placeholder="My Finished Task">
-    <input type="checkbox" name="finishedTask" id="finishedTask" checked>
-    <br>
-    <input type="text" name="unfinishedTaskTxt" id="unfinishedTaskTxt" placeholder="My Unfinished Task">
-
-    <input type="checkbox" name="unfinishedTask" id="unfinishedTask">
-    <br>
-    <button>Abandon</button>
-  </form>
-  <form action="">
-    <input type="text" name="sefintask" id="sefintask" placeholder="Someone else's Finished">
-    <br>
-    <input type="text" name="seufintask" id="seufintask" placeholder="Someone else's Unfinished">
-    <br>
-    <input type="text" name="unclaimed" id="unclaimed" placeholder="unclaimed">
-    <br>
-    <button>claim</button>
-  </form>
-  <form action="">
-    <input type="text" name="newTask" id="newTask" placeholder="Enter a new task here">
-    <br>
-    <button>Add</button>
-  </form>
-  <button>Remove Complete</button>
+  <div class="card tasks">
+    <form action="">
+      <input type="text" name ="finishedtaskTxt" id ="finishedtaskTxt" placeholder="My Finished Task">
+      <input type="checkbox" name="finishedTask" id="finishedTask" checked>
+      <br>
+      <input type="text" name="unfinishedTaskTxt" id="unfinishedTaskTxt" placeholder="My Unfinished Task">
+      
+      <input type="checkbox" name="unfinishedTask" id="unfinishedTask">
+      <br>
+      <button class="btn btn-border">Abandon</button>
+    </form>
+    <form action="">
+      <input type="text" name="sefintask" id="sefintask" placeholder="Someone else's Finished">
+      <br>
+      <input type="text" name="seufintask" id="seufintask" placeholder="Someone else's Unfinished">
+      <br>
+      <input type="text" name="unclaimed" id="unclaimed" placeholder="unclaimed">
+      <br>
+      <button class="btn btn-border">claim</button>
+    </form>
+    <form action="">
+      <input type="text" name="newTask" id="newTask" placeholder="Enter a new task here">
+      <br>
+      <button class="btn btn-border">Add</button>
+    </form>
+    <button class="btn btn-border">Remove Complete</button>
+  </div>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
