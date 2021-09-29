@@ -8,5 +8,36 @@
     background-color: #ecf4ff;
 }
 .btn-border{
-    border: 1px black;
+    border: 1px solid gray;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    margin: 0;
+    font-size: medium;
+}
+input{
+    background-color: #f1f4f8;
+    border: 1px solid gray;
+    margin: 0;
+}
+.notFullScreen{
+    margin: auto;
+    width: 40%;
+}
+.shadow{
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+#theList{
+    margin: auto;
+    width: 60%;
+}
+.cardInside{
+    background-color: #f1f4f8;
+    border: 1px solid gray;
+    margin: 10px;
+    margin-right: 0;
+    padding: 0px 5px 0 5px;
+}
+.removebtn{
+    margin: auto;
+    width: 16rem;
 }

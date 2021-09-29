@@ -14,7 +14,7 @@
     <h1>To Do!</h1>
     
   </header> 
-  <div class = "accordion" id="accordionTop">
+  <div class = "accordion notFullScreen shadow" id="accordionTop">
     <div class="accordion-item">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         Logged in as USER
@@ -28,32 +28,37 @@
   </div>
   <br>
   <br>
-  <div class="card tasks">
+  <div class="card tasks shadow" id="theList">
     <form action="">
-      <input type="text" name ="finishedtaskTxt" id ="finishedtaskTxt" placeholder="My Finished Task">
-      <input type="checkbox" name="finishedTask" id="finishedTask" checked>
-      <br>
-      <input type="text" name="unfinishedTaskTxt" id="unfinishedTaskTxt" placeholder="My Unfinished Task">
-      
-      <input type="checkbox" name="unfinishedTask" id="unfinishedTask">
-      <br>
-      <button class="btn btn-border">Abandon</button>
+      <div class="cardInside">
+        <input type="checkbox" name="finishedTask" id="finishedTask" checked>
+        <input type="text" name ="finishedtaskTxt" id ="finishedtaskTxt" placeholder="My Finished Task">
+      </div>
+      <div class="cardInside">
+        <input type="checkbox" name="unfinishedTask" id="unfinishedTask">
+        <input type="text" name="unfinishedTaskTxt" id="unfinishedTaskTxt" placeholder="My Unfinished Task">
+        <button class="btn btn-border">Abandon</button>
+      </div>
     </form>
     <form action="">
-      <input type="text" name="sefintask" id="sefintask" placeholder="Someone else's Finished">
-      <br>
-      <input type="text" name="seufintask" id="seufintask" placeholder="Someone else's Unfinished">
-      <br>
-      <input type="text" name="unclaimed" id="unclaimed" placeholder="unclaimed">
-      <br>
-      <button class="btn btn-border">claim</button>
+      <div class="cardInside">
+        <input type="text" name="sefintask" id="sefintask" placeholder="Someone else's Finished">
+      </div>
+      <div class="cardInside"> 
+        <input type="text" name="seufintask" id="seufintask" placeholder="Someone else's Unfinished">
+      </div>
+      <div class="cardInside">
+        <input type="text" name="unclaimed" id="unclaimed" placeholder="unclaimed">
+        <button class="btn btn-border">claim</button>
+      </div>
     </form>
     <form action="">
-      <input type="text" name="newTask" id="newTask" placeholder="Enter a new task here">
-      <br>
-      <button class="btn btn-border">Add</button>
+      <div class="cardInside">
+        <input type="text" name="newTask" id="newTask" placeholder="Enter a new task here">
+        <button class="btn btn-border">Add</button>
+      </div>
     </form>
-    <button class="btn btn-border">Remove Complete</button>
+    <button class="btn btn-border removebtn">Remove Complete</button>
   </div>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
