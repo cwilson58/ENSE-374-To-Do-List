@@ -6,38 +6,65 @@
 
 .tasks{
     background-color: #ecf4ff;
+    padding: 5px;
+}
+.cardInside{
+    background-color: #e9ecef;
+    color: gray;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 .btn-border{
     border: 1px solid gray;
+    background-color: #ecf4ff;
     padding-top: 2px;
     padding-bottom: 1px;
     margin: 0;
     font-size: medium;
 }
 input{
-    background-color: #f1f4f8;
     border: 1px solid gray;
     margin: 0;
+    width: 88%;
+    text-align: left;
 }
 .notFullScreen{
     margin: auto;
-    width: 40%;
+    width: 30%;
+}
+.fullSize{
+    width: 100%;
 }
 .shadow{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 #theList{
     margin: auto;
-    width: 60%;
+    width: 40%;
 }
-.cardInside{
-    background-color: #f1f4f8;
-    border: 1px solid gray;
-    margin: 10px;
-    margin-right: 0;
-    padding: 0px 5px 0 5px;
-}
+
 .removebtn{
     margin: auto;
-    width: 16rem;
+    width: 12rem;
+}
+.rightSide{
+    float: right;
+}
+.leftSide{
+    float: left;
+}
+.lineThrough{
+    text-decoration: line-through;
+}
+.logOut{
+    background-color: #ecf4ff;
+}
+#logginBar{
+ padding: 15px 0 15px 0;   
+}
+#logOutBtn{
+    margin: auto;
+    width: 7em;
 }
