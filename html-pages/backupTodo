@@ -30,31 +30,40 @@
   <br>
   <br>
   <div class="card tasks shadow" id="theList">
-    <!-- ADD -->
-    <form action="">
-      <div class="input-group mx-auto mb-2 w-70">
-        <input type="text" class="form-control" placeholder="Enter a new task here" id="newTaskInp">
-        <button class="input-group-text" id="add-btn">Add</button>
-    </div>
-    </form>
-    <button class="btn btn-border removebtn">Remove Complete</button>
-    <br>
-    <!-- unclaimed-->
-    <form action="" id="unclaimedTasks">
-      
-    </form>
-    <!-- unfinished -->
-      <form action="" id="myTasks">
-        <div id="unfinished">
-          
-        </div>
+      <form action="">
         <div class="input-group cardInside">
           <span class="input-group-text">
             <input type="checkbox" class="form-check-input" name="finishedTask" id="finishedTask" checked>
           </span>
           <label for="finishedTask" class="form-check-label lineThrough">My Finished Task</label>
         </div>
+        <div class="input-group cardInside">
+          <span class="input-group-text">
+            <input type="checkbox" class="form-check-input" name="unfinishedTask" id="unfinishedTask">
+          </span>
+          <label for="unfinishedTask">My Unfinished Task</label>
+          <button class="btn btn-border ms-auto rightSide">Abandon</button>
+        </div>
       </form>
+      <form action="">
+        <div class="cardInside">
+          <label for="sefintask" class="form-check-label lineThrough">Someone else's finsihed</label>
+        </div>
+        <div class="cardInside"> 
+          <label for="seufintask">Someone else's unfinished</label>
+        </div>
+        <div class="cardInside clearfix">
+          <label for="unclaimed" class="form-check-label">unclaimed task</label>
+          <button class="btn btn-border rightSide">claim</button>
+        </div>
+      </form>
+    <form action="">
+      <div class="input-group mx-auto mb-2 w-70">
+        <input type="text" class="form-control" placeholder="Enter a new task here">
+        <button class="input-group-text" id="add-btn">Add</button>
+    </div>
+    </form>
+    <button class="btn btn-border removebtn">Remove Complete</button>
   </div>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
