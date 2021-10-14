@@ -15,7 +15,6 @@ $(document).ready( () => {
         newTask.append(newLbl);
         $( "#unclaimedTasks" ).append(newTask);
         $( "#newTask" + counter ).append("<button class=\"btn btn-border rightSide\" id=" + newBtnId + counter +">claim</button>"); //Why does this work!
-     
         counter++;
     
         taskInp.val(''); //clear the box
@@ -23,10 +22,9 @@ $(document).ready( () => {
 
     })
 })
-document.getElementById("unclaimedTasks").addEventListener("click", function(e){
-        event.preventDefault();
-        if(e.target.innerHTML == "claim"){
-        
+document.getElementById("unclaimedTasks").addEventListener("click", function(e){   
+    event.preventDefault(); 
+    if(e.target.innerHTML == "claim"){
         let newClaimedDiv = document.createElement('div');
         let theSpan = document.createElement('span');
         let abandonBtn = document.createElement('button');
@@ -52,27 +50,34 @@ document.getElementById("unclaimedTasks").addEventListener("click", function(e){
         newClaimedDiv.append(abandonBtn);
         document.getElementById("unfinished").append(newClaimedDiv);
         $(e.target.parentNode).remove();
-        }
+    }
 
 });
 
 document.getElementById("unfinished").addEventListener("click", function(e){
+
+    if(e.target.type == "checkbox"){
+        if(e.target.checked){
+            
+        }
+        return true;
+    }
     event.preventDefault();
     if(e.target.innerHTML == "Abandon"){
 
-    //Make this as a div
-    var newTask = $("<div class=\"cardInside clearfix\" id=" + newId + counter + "></div>");
-    var newLbl = $("<label for=" + newId + counter + "></label>");
-    newLbl.text(e.target.previousSibling.innerHTML);
-    newTask.append(newLbl);
+        //Make this as a div
+        var newTask = $("<div class=\"cardInside clearfix\" id=" + newId + counter + "></div>");
+        var newLbl = $("<label for=" + newId + counter + "></label>");
+        newLbl.text(e.target.previousSibling.innerHTML);
+        newTask.append(newLbl);
 
-    $( "#unclaimedTasks" ).append(newTask);
-    $( "#newTask" + counter ).append("<button class=\"btn btn-border rightSide\" id=" + newBtnId + counter +">claim</button>");
+        $( "#unclaimedTasks" ).append(newTask);
+        $( "#newTask" + counter ).append("<button class=\"btn btn-border rightSide\" id=" + newBtnId + counter +">claim</button>");
 
-
-    counter++;
-    $(e.target.parentNode).remove();
+        counter++;
+        $(e.target.parentNode).remove();
     }
+
 
 
 })
