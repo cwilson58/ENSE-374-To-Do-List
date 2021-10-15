@@ -22,6 +22,18 @@ $(document).ready( () => {
 
     })
 })
+
+$ ( "#rmv-btn" ).on( "click", () => {
+    //for each child of the unfinished list
+    document.getElementById("unfinished").childNodes.forEach(element => {
+        if(element.firstChild != null){
+            if(element.firstChild.lastChild.checked){
+                $(element).remove();
+            }
+        }
+    }); 
+})
+
 document.getElementById("unclaimedTasks").addEventListener("click", function(e){   
     event.preventDefault(); 
     if(e.target.innerHTML == "claim"){
@@ -58,7 +70,12 @@ document.getElementById("unfinished").addEventListener("click", function(e){
 
     if(e.target.type == "checkbox"){
         if(e.target.checked){
-            
+           $(e.target.parentNode.parentNode.childNodes[1]).addClass("lineThrough");
+           e.target.parentNode.parentNode.lastChild.style.display = "none";
+        }
+        else{
+            $(e.target.parentNode.parentNode.childNodes[1]).removeClass("lineThrough");
+            e.target.parentNode.parentNode.lastChild.style.display = "block";
         }
         return true;
     }
