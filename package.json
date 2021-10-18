@@ -1,0 +1,23 @@
+{
+  "name": "ense-374-to-do-list",
+  "version": "1.0.0",
+  "description": "This is a To Do list page being made for my ENSE 374 lab during the Fall 2021 term",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwilson58/ENSE-374-To-Do-List.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwilson58/ENSE-374-To-Do-List/issues"
+  },
+  "homepage": "https://github.com/cwilson58/ENSE-374-To-Do-List#readme"
+}
