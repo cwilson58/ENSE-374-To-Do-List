@@ -16,7 +16,6 @@ app.post("/", (req, res)=>{
     }
 });
 
-
 // Simple server operation
 app.listen (port, () => {
     // template literal
