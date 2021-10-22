@@ -14,7 +14,7 @@ app.set("view engine", "ejs");
 //Checking username and password
 app.post("/", (req, res)=>{
     if(req.body.Email === 'username' && req.body.password === 'password'){
-        res.render("ToDo");
+        res.render("ToDo", {username: req.body.Email});
     }
     //done for testing only should be user feedback
     else{
