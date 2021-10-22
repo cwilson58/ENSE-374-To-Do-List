@@ -7,12 +7,18 @@ app.use(express.urlencoded({ extended: true}));
 // a common localhost test port
 const port = 3000; 
 
-app.use(express.static("public"));
+app.use(express.static("ejs-eg"));
+
+app.set("view engine", "ejs");
 
 //Checking username and password
 app.post("/", (req, res)=>{
-    if(req.body.Email == 'username' && req.body.password == 'password'){
-        res.redirect("/oldToDo.html")
+    if(req.body.Email === 'username' && req.body.password === 'password'){
+        res.render("ToDo");
+    }
+    //done for testing only should be user feedback
+    else{
+        console.log("login error");
     }
 });
 
