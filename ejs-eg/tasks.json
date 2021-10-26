@@ -1,1 +1,54 @@
-{"listOfAllTasks":[{"_id":1,"text":"Get Milk","state":"claimed","creator":"potato","isTaskClaimed":true,"claimingUser":"username","isTaskDone":false,"isTaskCleared":false},{"_id":2,"text":"Sleep","state":"claimed","creator":"potato","isTaskClaimed":true,"claimingUser":"username","isTaskDone":false,"isTaskCleared":false},{"_id":4,"text":"Put Gas in car","state":"unclaimed","creator":"potato","isTaskClaimed":false,"claimingUser":null,"isTaskDone":false,"isTaskCleared":false}]}
+{
+  "listOfAllTasks": [
+    {
+      "_id": 1,
+      "text": "Get Milk",
+      "state": "claimed",
+      "creator": "potato",
+      "isTaskClaimed": true,
+      "claimingUser": "username",
+      "isTaskDone": false,
+      "isTaskCleared": false
+    },
+    {
+      "_id": 2,
+      "text": "Sleep",
+      "state": "claimed",
+      "creator": "potato",
+      "isTaskClaimed": true,
+      "claimingUser": "username",
+      "isTaskDone": false,
+      "isTaskCleared": false
+    },
+    {
+      "_id": 3,
+      "text": "Do ENSE 374 Lab 7",
+      "state": "unclaimed",
+      "creator": "username",
+      "isTaskClaimed": false,
+      "claimingUser": null,
+      "isTaskDone": false,
+      "isTaskCleared": false
+    },
+    {
+      "_id": 4,
+      "text": "Put Gas in car",
+      "state": "finished",
+      "creator": "potato",
+      "isTaskClaimed": true,
+      "claimingUser": "potato",
+      "isTaskDone": true,
+      "isTaskCleared": false
+    },
+    {
+      "_id": 5,
+      "text": "Drink more coffee",
+      "state": "claimed",
+      "creator": "username",
+      "isTaskClaimed": true,
+      "claimingUser": "potato",
+      "isTaskDone": false,
+      "isTaskCleared": false
+    }
+  ]
+}
