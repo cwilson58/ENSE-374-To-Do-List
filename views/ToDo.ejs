@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">  
-  <link rel="stylesheet" href="/public/css/styles.css">
-  <title>To Do!</title>
-</head>
-<body>
+<%- include("layouts/header") -%>
   <header>
     <h1>To Do!</h1>
     
@@ -24,35 +13,32 @@
     </a>
   <div class="collapse not" id="collapseLog">
     <div class="card card-body notFullScreen shadow">
-      <a href="../../index.html" class="btn btn-primary" id="logOutBtn">Log Out</a>
+      <form action="/logout" method="post">
+        <input type="submit" value="logout" class="btn btn-primary" id=logOutBtn>
+      </form>
     </div>
   </div>
   <br>
   <br>
   <div class="card tasks shadow" id="theList">
     <!-- ADD -->
-    <form action="">
+    <form action="/addtask" method="post" >
       <div class="input-group mx-auto mb-2 w-70">
-        <input type="text" class="form-control" placeholder="Enter a new task here" id="newTaskInp">
+        <input type="text" name ="taskInput"class="form-control" placeholder="Enter a new task here" id="newTaskInp">
         <button class="input-group-text" id="add-btn">Add</button>
-    </div>
+      </div>
     </form>
-    <button class="btn btn-border removebtn" id="rmv-btn">Remove Complete</button>
+    <form action="/purge" method="post">
+      <button class="btn btn-border removebtn" id="rmv-btn">Remove Complete</button>
+    </form>
     <br>
     <!-- unclaimed-->
-    <form action="" id="unclaimedTasks">
-      
-    </form>
+    <div id="unclaimedTasks">
+      <%- include("partials/unclaimed.ejs", itemList,username) -%>
+    </div>
     <!-- unfinished -->
-      <form action="" id="myTasks">
-        <div id="unfinished">
-          
-        </div>
-      </form>
+    <div id="unfinished">
+      
+    </div>
   </div>
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="../../toDo.js"></script>
-</body>
-</html>
+<%- include("layouts/footer")-%>
