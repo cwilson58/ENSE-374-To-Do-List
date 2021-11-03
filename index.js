@@ -5,7 +5,10 @@ index.js for ENSE-374 lab 7 due on 10/27/2021
 */
 const { json } = require("express");
 const express = require("express");
+const mongoose = require("mongoose");
 const fs = require("fs");
+const { kStringMaxLength } = require("buffer");
+const internal = require("stream");
 var taskString = JSON.parse(fs.readFileSync("ejs-eg/tasks.json"));
 var userString = JSON.parse(fs.readFileSync("ejs-eg/users.json"));
 
@@ -15,10 +18,99 @@ app.use(express.urlencoded({ extended: true }));
 
 // a common localhost test port
 const port = 3000;
+// connect to mongoose on port 27017
+mongoose.connect("mongodb://localhost:27017/toDoList", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.use(express.static("ejs-eg"));
 
 app.set("view engine", "ejs");
+
+const userSchema = new mongoose.Schema({
+  username: String,
+  password: String,
+});
+
+const taskSchema = new mongoose.Schema({
+  _id: Number,
+  text: String,
+  state: String,
+  creator: String,
+  isTaskClaimed: Boolean,
+  claimingUser: String,
+  isTaskDone: Boolean,
+  isTaskCleared: Boolean,
+});
+const Users = mongoose.model("Users", userSchema);
+const Tasks = mongoose.model("Tasks", taskSchema);
+
+const user1 = new Users({
+  username: "username",
+  password: "password",
+});
+//user1.save();
+const user2 = new Users({
+  username: "potato",
+  password: "mashed",
+});
+//user2.save();
+const task1 = new Tasks({
+  _id: 1,
+  text: "Get Milk",
+  state: "claimed",
+  creator: "potato",
+  isTaskClaimed: true,
+  claimingUser: "username",
+  isTaskDone: false,
+  isTaskCleared: false,
+});
+//task1.save();
+const task2 = new Tasks({
+  _id: 2,
+  text: "Sleep",
+  state: "claimed",
+  creator: "potato",
+  isTaskClaimed: true,
+  claimingUser: "username",
+  isTaskDone: false,
+  isTaskCleared: false,
+});
+//task2.save();
+const task3 = new Tasks({
+  _id: 3,
+  text: "Do ENSE 374 Lab 7",
+  state: "unclaimed",
+  creator: "username",
+  isTaskClaimed: false,
+  claimingUser: null,
+  isTaskDone: false,
+  isTaskCleared: false,
+});
+//task3.save();
+const task4 = new Tasks({
+  _id: 4,
+  text: "Pay Attention in class",
+  state: "claimed",
+  creator: "potato",
+  isTaskClaimed: true,
+  claimingUser: "potato",
+  isTaskDone: false,
+  isTaskCleared: false,
+});
+//task4.save();
+const task5 = new Tasks({
+  _id: 5,
+  text: "Drink more coffee",
+  state: "claimed",
+  creator: "username",
+  isTaskClaimed: true,
+  claimingUser: "potato",
+  isTaskDone: false,
+  isTaskCleared: false,
+});
+//task5.save();
 
 var currUsersName = "";
 function renderToDoPage(res) {
@@ -184,3 +276,5 @@ app.listen(port, () => {
   // template literal
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+mongoose.connection.close();

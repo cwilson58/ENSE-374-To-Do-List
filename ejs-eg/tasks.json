@@ -31,16 +31,6 @@
       "isTaskCleared": false
     },
     {
-      "_id": 4,
-      "text": "Put Gas in car",
-      "state": "finished",
-      "creator": "potato",
-      "isTaskClaimed": true,
-      "claimingUser": "potato",
-      "isTaskDone": true,
-      "isTaskCleared": false
-    },
-    {
       "_id": 5,
       "text": "Drink more coffee",
       "state": "claimed",
