@@ -1,0 +1,51 @@
+<% for (let item of itemList) { %>
+    <% if(item.state === "unclaimed") { %>
+    <form action="/claim" method="post">
+        <div class="cardInside clearfix">
+            <input type="text" name="hiddenId" id="" value="<%= item._id %>" class = "d-none">
+            <label for="unclaimed" class="form-check-label"><%= item.text %></label>
+            <button type="submit" class="btn btn-border rightSide">claim</button>
+        </div>
+    </form> 
+    <%}
+    else if(item.state === "claimed" && item.claimingUser === username){%>
+        <form action="/abandon" method="post">
+        <div class="input-group cardInside">
+            <input type="text" name="hiddenId" id="" value="<%= item._id %>" class = "d-none">
+            <span class="input-group-text">
+                <input type="checkbox" class="form-check-input" name="Task" id="unfinishedTask" onChange="this.form.submit()" value="true">
+            </span>
+            <label for="unfinishedTask"><%= item.text %></label>
+            <button class="btn btn-border ms-auto rightSide">Abandon</button>
+        </div>
+        </form>
+    <%}else if(item.isTaskDone && item.claimingUser === username){ %>
+        <form action="/unfinish" method="post">
+            <div class="input-group cardInside">
+                <input type="text" name="hiddenId" id="" value="<%= item._id %>" class = "d-none">
+                <span class="input-group-text">
+                    <input type="checkbox" class="form-check-input" name="Task" id="finishedTask" onChange="this.form.submit()" value="true" checked>
+                </span>
+                <label for="finishedTask" class="form-check-label lineThrough"><%= item.text %></label>
+            </div>
+        </form>
+    <%}
+    else if(item.isTaskDone){%>
+        <form action="/unfinish" method="post">
+            <div class="input-group cardInside">
+                <input type="text" name="hiddenId" id="" value="<%= item._id %>" class = "d-none">
+                <label for="finishedTask" class="form-check-label lineThrough"><%= item.text %></label>
+            </div>
+        </form>
+    <%}
+    else if(item.state === "claimed") {%>
+        <form action="/abandon" method="post">
+            <div class="input-group cardInside">
+                <input type="text" name="hiddenId" id="" value="<%= item._id %>" class = "d-none">
+                <input type="text" name="hiddenId" id="" value="<%= item._id %>" class = "d-none">
+                <label for="unfinishedTask"><%= item.text %></label>
+            </div>
+        </form>
+    <%}%>
+    
+<% } %>
