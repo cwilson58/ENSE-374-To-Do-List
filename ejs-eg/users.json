@@ -1,6 +1,0 @@
-{
-  "listOfAllUsers": [
-    { "username": "username", "password": "password" },
-    { "username": "potato", "password": "mashed" }
-  ]
-}
